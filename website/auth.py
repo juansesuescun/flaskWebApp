@@ -1,4 +1,4 @@
-from flask import Blueprint
+from flask import Blueprint, render_template
 
 # definicion de blueprint para autenticacion o login
 auth = Blueprint('auth', __name__)
@@ -7,7 +7,7 @@ auth = Blueprint('auth', __name__)
 #Definiendo las rutas para login logout
 @auth.route('/login')
 def login():
-    return "<p>Login</p>"
+    return render_template("login.html", text = "Testing", user = "Juanse")
 
 @auth.route('/logout')
 def logout():
@@ -15,4 +15,4 @@ def logout():
 
 @auth.route('/sign-up')
 def sign_up():
-    return "<p>Sign Up</p>"
+    return render_template("sign_up.html")
